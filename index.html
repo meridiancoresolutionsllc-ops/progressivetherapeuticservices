@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<title>Progressive Therapeutic Services, Inc</title>
+<meta name="description" content="Progressive Therapeutic Services (PTS) empowers adults with intellectual & developmental disabilities to live, work, and thrive through Community Day Services and person-centered support." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="theme-color" content="#ffffff" />
+
+<link rel="icon" href="images/favicon-32.png" sizes="32x32" />
+<link rel="apple-touch-icon" href="images/favicon-180.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Taviraj:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --purple:#512c61;
+    --purple-light:#a58fb2;
+    --gold:#dbc29a;
+    --cream:#f5f0e9;
+    --ink:#1c1b1a;
+    --muted:#a8a8a8;
+    --green-deep:#204030;
+    --white:#ffffff;
+    --font-head:"Taviraj", Georgia, serif;
+    --font-body:"Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --maxw:1080px;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  *{margin:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--font-body);
+    font-size:15px;
+    line-height:1.7;
+    color:var(--ink);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:var(--purple);text-decoration:none;}
+  a:hover{color:#7d4695;}
+  ul{list-style:none;padding:0;}
+  h1,h2,h3,h4,h5,h6{font-family:var(--font-head);font-weight:500;color:var(--purple);line-height:1.2;}
+  .container{width:min(100% - 3rem, var(--maxw));margin-inline:auto;}
+
+  /* ---------- Header ---------- */
+  #site-header{
+    position:sticky;top:0;left:0;width:100%;z-index:1000;
+    background:var(--white);
+    box-shadow:0 2px 10px rgba(0,0,0,.06);
+  }
+  .topbar{
+    display:flex;align-items:center;justify-content:space-between;
+    height:70px;
+  }
+  .logo img{height:42px;width:auto;}
+  nav#mainnav{display:flex;}
+  nav#mainnav > ul{display:flex;align-items:center;gap:2px;}
+  nav#mainnav > ul > li{position:relative;}
+  nav#mainnav > ul > li > a{
+    display:block;padding:12px 16px;font-size:14px;font-weight:500;
+    color:var(--purple);letter-spacing:.02em;
+  }
+  nav#mainnav > ul > li.current > a{color:var(--purple-light);}
+  nav#mainnav > ul > li > a:hover{color:var(--purple-light);}
+  nav#mainnav .submenu{
+    position:absolute;top:100%;left:0;min-width:280px;
+    background:var(--cream);padding:10px 0;
+    box-shadow:0 12px 24px rgba(0,0,0,.12);
+    opacity:0;visibility:hidden;transform:translateY(6px);
+    transition:opacity .18s ease, transform .18s ease, visibility .18s;
+  }
+  nav#mainnav li.has-sub:hover > .submenu,
+  nav#mainnav li.has-sub.open > .submenu{
+    opacity:1;visibility:visible;transform:translateY(0);
+  }
+  nav#mainnav .submenu li a{
+    display:block;padding:10px 20px;font-size:13.5px;color:var(--gold);
+  }
+  nav#mainnav .submenu li a:hover{color:var(--purple-light);}
+  .menu-toggle{
+    display:none;background:none;border:0;font-size:26px;color:var(--purple);
+    cursor:pointer;padding:6px 10px;
+  }
+
+  @media (max-width:900px){
+    .menu-toggle{display:block;}
+    nav#mainnav{
+      position:absolute;top:100%;right:0;width:280px;background:var(--white);
+      box-shadow:0 12px 24px rgba(0,0,0,.15);
+      max-height:0;overflow:hidden;transition:max-height .3s ease;
+    }
+    nav#mainnav.open{max-height:600px;}
+    nav#mainnav > ul{flex-direction:column;align-items:stretch;gap:0;padding:10px 0;}
+    nav#mainnav > ul > li > a{padding:12px 24px;}
+    nav#mainnav .submenu{
+      position:static;opacity:1;visibility:visible;transform:none;
+      display:none;box-shadow:none;padding:0;
+    }
+    nav#mainnav li.has-sub.open .submenu{display:block;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;min-height:660px;
+    display:flex;align-items:center;
+    background:var(--green-deep) url('images/hero-art-therapy.png') center/cover no-repeat;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg, rgba(32,64,48,.72) 0%, rgba(32,64,48,.35) 55%, rgba(32,64,48,.15) 100%);
+  }
+  .hero-inner{position:relative;z-index:1;padding:60px 0;}
+  .hero h1{
+    color:var(--white);font-size:clamp(34px,5.5vw,56px);font-weight:500;
+    text-shadow:0 4px 15px rgba(0,0,0,.25);margin-bottom:32px;max-width:640px;
+  }
+  .btn{
+    display:inline-block;font-family:var(--font-body);font-weight:500;
+    font-size:14px;letter-spacing:.03em;padding:16px 30px;
+    background:var(--gold);color:var(--ink);border:none;border-radius:0;
+    cursor:pointer;transition:background .2s ease,color .2s ease;
+  }
+  .btn:hover{background:var(--purple-light);color:var(--white);}
+  .btn-purple{background:var(--purple);color:var(--white);}
+  .btn-purple:hover{background:var(--purple-light);color:var(--white);}
+
+  /* ---------- Sections ---------- */
+  section{padding:75px 0;}
+  .section-tight{padding:60px 0 50px;}
+  .center{text-align:center;}
+  .eyebrow-heading{color:var(--gold);}
+  .bg-cream{background:var(--cream);}
+  .bg-purple{background:var(--purple);color:var(--white);}
+  .bg-purple h2,.bg-purple p{color:var(--white);}
+  .bg-purple .eyebrow-heading{color:var(--gold);}
+
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  @media (max-width:800px){.grid-2{grid-template-columns:1fr;gap:36px;}}
+
+  .about-copy h2{font-size:32px;margin-bottom:14px;}
+  .about-copy h5{font-family:var(--font-body);font-weight:700;font-size:15px;color:var(--ink);margin-bottom:16px;}
+  .about-copy p{color:var(--ink);margin-bottom:24px;}
+  .rounded-img{border-radius:4px;overflow:hidden;}
+  .rounded-img img{width:100%;height:auto;object-fit:cover;aspect-ratio:1/1;}
+
+  /* What we do */
+  .whatwedo-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:start;}
+  @media (max-width:800px){.whatwedo-grid{grid-template-columns:1fr;}}
+  .whatwedo-grid h2{font-size:32px;margin-bottom:16px;}
+  .whatwedo-grid > div:first-child p{opacity:.9;}
+  .feature-list{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  @media (max-width:500px){.feature-list{grid-template-columns:1fr;}}
+  .feature-item{display:flex;align-items:flex-start;gap:14px;}
+  .feature-icon{
+    flex:0 0 auto;width:44px;height:44px;border-radius:50%;
+    background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;
+    font-size:20px;color:var(--gold);
+  }
+  .feature-item h4{color:var(--white);font-size:16px;font-family:var(--font-body);font-weight:600;margin:0;}
+
+  /* Team */
+  .team-copy p{color:var(--ink);margin-bottom:18px;}
+  .team-copy em{color:var(--muted);}
+  .team-photo{position:relative;}
+  .team-photo img{width:100%;height:auto;object-fit:cover;}
+  .team-photo-bar{background:var(--purple);height:40px;}
+
+  /* Testimonials */
+  .testimonial-slider{max-width:760px;margin:0 auto;text-align:center;}
+  .testi-slide{display:none;}
+  .testi-slide.active{display:block;animation:fade .5s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+  .quote-icon{font-size:36px;color:var(--gold);font-family:Georgia,serif;margin-bottom:14px;}
+  blockquote{font-size:19px;line-height:1.6;color:var(--ink);font-style:italic;font-weight:300;}
+  .testi-dots span{margin:0 3px;}
+  .testi-author{margin-top:24px;}
+  .testi-author h5{font-family:var(--font-body);font-size:15px;font-weight:700;color:var(--purple);margin-bottom:2px;}
+  .testi-author span{font-size:13px;color:var(--muted);}
+  .dots{display:flex;justify-content:center;gap:8px;margin-top:30px;}
+  .dot{width:9px;height:9px;border-radius:50%;background:#e2d9cf;border:none;cursor:pointer;padding:0;}
+  .dot.active{background:var(--purple);}
+
+  hr.divider{border:none;height:2px;background:var(--purple);max-width:var(--maxw);margin:0 auto;}
+
+  /* CTA */
+  .cta{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+  .cta h3{font-size:24px;}
+  @media (max-width:700px){.cta{justify-content:center;text-align:center;}}
+
+  /* Footer */
+  footer{
+    background:var(--cream) url('images/hero-art-therapy.png') center bottom/cover no-repeat;
+    background-blend-mode:multiply;
+    padding:40px 0;position:relative;
+  }
+  footer::before{content:"";position:absolute;inset:0;background:rgba(245,240,233,.94);}
+  .footer-inner{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+  .copyright{color:var(--ink);font-size:13px;}
+  .social{display:flex;gap:10px;}
+  .social a{
+    width:36px;height:36px;border-radius:50%;background:var(--purple);color:var(--white);
+    display:flex;align-items:center;justify-content:center;font-size:15px;
+  }
+  .social a:hover{background:var(--purple-light);color:var(--white);}
+  #back-to-top{
+    width:36px;height:36px;border-radius:50%;background:var(--purple);color:var(--white);
+    display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;font-size:16px;
+  }
+  #back-to-top:hover{background:var(--purple-light);}
+
+  /* Cookie banner */
+  #cookie-banner{
+    position:fixed;right:20px;bottom:20px;max-width:320px;background:var(--white);
+    box-shadow:0 15px 30px rgba(1,7,39,.18);border-radius:6px;padding:20px;z-index:2000;
+    font-size:13px;color:#626262;display:flex;flex-direction:column;gap:10px;
+  }
+  #cookie-banner a{color:var(--ink);text-decoration:underline;}
+  #cookie-banner button{
+    align-self:flex-start;background:#006edf;color:#fff;border:none;padding:9px 18px;
+    border-radius:4px;font-size:13px;cursor:pointer;
+  }
+  #cookie-banner button:hover{background:#0089f7;}
+  #cookie-banner.hidden{display:none;}
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="container topbar">
+    <a class="logo" href="index.html" aria-label="Progressive Therapeutic Services home">
+      <img src="images/logo.png" alt="Progressive Therapeutic Services, Inc" />
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+
+    <nav id="mainnav">
+      <ul>
+        <li class="current"><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="has-sub">
+          <a href="#" class="submenu-toggle">Programs &amp; Services</a>
+          <ul class="submenu">
+            <li><a href="community-day-program.html">Community Day Program</a></li>
+            <li><a href="#">Community Integrated Arrangement (Coming Soon)</a></li>
+          </ul>
+        </li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <h1>Empowering Adults with Disabilities to Live, Work &amp; Thrive</h1>
+    <a class="btn" href="contact.html">Schedule a Tour</a>
+  </div>
+</section>
+
+<section class="section-tight center">
+  <div class="container">
+    <h2 class="eyebrow-heading" style="color:var(--gold);">Our Programs</h2>
+  </div>
+</section>
+
+<section>
+  <div class="container grid-2">
+    <div class="rounded-img">
+      <img src="images/our-programs.png" alt="PTS programs" />
+    </div>
+    <div class="about-copy">
+      <h2>At Progressive Therapeutic Services (PTS)</h2>
+      <h5>We specialize in supporting individuals with intellectual &amp; developmental disabilities by providing pathways to greater independence and personal growth. Our cornerstone program, the Community Day Services (CDS), is designed for adults 18 years and older who have developmental disabilities and varying levels of skill development.</h5>
+      <p>Through CDS, we create a supportive, home-like environment where clients can thrive. Our focus is on helping clients build the skills they need for daily living, employment readiness, and community integration &mdash; all while receiving individualized care and support. Each program is goal-oriented and tailored to meet the unique needs of every client.</p>
+      <a class="btn btn-purple" href="community-day-program.html">Read more &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-purple">
+  <div class="container whatwedo-grid">
+    <div>
+      <h2 class="eyebrow-heading">What We Do &amp; How We Do It</h2>
+      <p>At PTS, we empower goal-driven individuals through customized professional development, therapeutic services, and community support. We understand that success looks different for everyone, so we approach each client with empathy, dignity, and a deep commitment to their personal journey.</p>
+    </div>
+    <div class="feature-list">
+      <div class="feature-item">
+        <div class="feature-icon">&#10022;</div>
+        <h4>Person-Centered Planning</h4>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">&#129309;</div>
+        <h4>Collaborative Support</h4>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">&#128218;</div>
+        <h4>Life Skills Training</h4>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">&#127793;</div>
+        <h4>Mindfulness &amp; Empowerment</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container grid-2">
+    <div class="team-copy">
+      <h2>Meet the Team</h2>
+      <p>Our team is made up of compassionate professionals who are deeply committed to making a difference. With backgrounds in social work, behavioral health, counseling, and direct support services, each team member brings a unique skill set to the table &mdash; but we all share one common goal: helping individuals reach their full potential.</p>
+      <p>We are more than just staff; we are mentors, advocates, and partners in each client&rsquo;s success story. From case managers and direct support staff to administrative leadership, every member of our team plays a vital role in delivering high-quality Progressive Therapeutic Services.</p>
+      <p><em>Stay tuned &mdash; meet our team bios will be added soon!</em></p>
+      <a class="btn btn-purple" href="contact.html">Connect with us</a>
+    </div>
+    <div class="team-photo">
+      <img src="images/team-event.jpg" alt="Progressive Therapeutic Services team event" />
+      <div class="team-photo-bar"></div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-cream">
+  <div class="container">
+    <div class="testimonial-slider">
+      <div class="testi-slide active">
+        <div class="quote-icon">&#8220;</div>
+        <blockquote>Progressive Therapeutic Services helped my brother transition into independent living with confidence. Their staff truly care and work hard to support every step of the journey.</blockquote>
+        <div class="testi-author">
+          <h5>Latasha M</h5>
+          <span>Family Member</span>
+        </div>
+      </div>
+      <div class="testi-slide">
+        <div class="quote-icon">&#8220;</div>
+        <blockquote>I&rsquo;ve grown so much since joining the CILA program. I&rsquo;m learning to cook, manage my money, and even got my first part-time job. The support here is amazing.</blockquote>
+        <div class="testi-author">
+          <h5>Marcus D.</h5>
+          <span>Client</span>
+        </div>
+      </div>
+      <div class="testi-slide">
+        <div class="quote-icon">&#8220;</div>
+        <blockquote>PTS creates a real sense of community. You can feel the compassion in every interaction &mdash; they&rsquo;ve helped my daughter build skills that we never thought possible.</blockquote>
+        <div class="testi-author">
+          <h5>Carlos R</h5>
+          <span>Parent</span>
+        </div>
+      </div>
+      <div class="dots" id="testiDots"></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" />
+
+<section>
+  <div class="container cta">
+    <h3>Contact and ask about more details</h3>
+    <a class="btn btn-purple" href="contact.html">Connect with us</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <button id="back-to-top" aria-label="Back to top">&#8593;</button>
+    <div class="copyright">2026 Progressive Therapeutic Services, Inc.</div>
+    <div class="social">
+      <a href="#" aria-label="Facebook">&#102;</a>
+      <a href="#" aria-label="X (Twitter)">&#120;</a>
+      <a href="#" aria-label="Pinterest">&#112;</a>
+      <a href="#" aria-label="Instagram">&#105;</a>
+    </div>
+  </div>
+</footer>
+
+<div id="cookie-banner">
+  <div>This website uses cookies to improve your experience. By using this website you agree to our <a href="#">Data Protection Policy</a>.</div>
+  <button id="cookie-accept">Accept all</button>
+</div>
+
+<script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const mainnav = document.getElementById('mainnav');
+  menuToggle.addEventListener('click', () => {
+    mainnav.classList.toggle('open');
+    const expanded = mainnav.classList.contains('open');
+    menuToggle.setAttribute('aria-expanded', expanded);
+  });
+
+  // Submenu toggle on mobile / click
+  document.querySelectorAll('.has-sub > .submenu-toggle').forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (window.innerWidth <= 900) {
+        e.preventDefault();
+        link.parentElement.classList.toggle('open');
+      }
+    });
+  });
+
+  // Testimonial slider
+  const slides = document.querySelectorAll('.testi-slide');
+  const dotsWrap = document.getElementById('testiDots');
+  let current = 0;
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => showSlide(i));
+    dotsWrap.appendChild(dot);
+  });
+  const dots = document.querySelectorAll('.dot');
+  function showSlide(i){
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = i;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+  setInterval(() => {
+    showSlide((current + 1) % slides.length);
+  }, 6000);
+
+  // Back to top
+  document.getElementById('back-to-top').addEventListener('click', () => {
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  // Cookie banner
+  const cookieBanner = document.getElementById('cookie-banner');
+  if (localStorage.getItem('pts_cookies_accepted')) {
+    cookieBanner.classList.add('hidden');
+  }
+  document.getElementById('cookie-accept').addEventListener('click', () => {
+    localStorage.setItem('pts_cookies_accepted', '1');
+    cookieBanner.classList.add('hidden');
+  });
+</script>
+
+</body>
+</html>
